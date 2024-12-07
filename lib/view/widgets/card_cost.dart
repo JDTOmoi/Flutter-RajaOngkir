@@ -19,11 +19,12 @@ class _CardCostsState extends State<CardCosts> {
         elevation: 4,
         child: ListTile(
           contentPadding: EdgeInsets.fromLTRB(16, 8, 8, 8),
-          title: Text(costs.service.toString()),
-          subtitle: Text("ETD: ${costs.cost![0].etd} hari"),
+          title: Text(
+              "${costs.description.toString()} (${costs.service.toString()})"),
+          subtitle: Text("Estimasi Sampai: ${costs.cost![0].etd} hari"),
           leading: CircleAvatar(
               backgroundColor: Colors.grey, child: Icon(Icons.map_outlined)),
-          trailing: Text("Rp. ${costs.cost![0].value},-"),
+          trailing: Text("Biaya: Rp. ${costs.cost![0].value},-"),
         ));
   }
 }
